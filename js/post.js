@@ -15,23 +15,31 @@ function postProductos(url, data) {
       }
     });
   }
-    const nombre = document.getElementById('nomProduct').value;
+  
+  function obtenerValores(){
+  const nombre = document.getElementById('nomProduct').value;
     const precio = document.getElementById('precioProduct').value;
-    //const descripcion = document.getElementById('desProduct').value;
-    
-    const todo = {
-        nombre, precio
-    };
+    const descripcion = document.getElementById('descProduct').value;
 
+    console.log("El valor del nombre es:" + nombre);
+    console.log("El valor del precio es:" + precio);
+    console.log("El valor de la descicion es:" + descripcion);
+
+    const todo = {
+      nombre,
+      precio,
+      descripcion
+    };
     const buttonS = document.getElementById('buttonSave').addEventListener('click', ()=>
     {
-        postProductos(url, todo)
-            .then(response => {
-                // Hacer algo con la respuesta si es necesario
-                console.log("Respuesta de postProductos:", response);
-            })
-            .catch(error => {
-                // Manejar el error si la solicitud falla
-                console.error("Error al enviar los datos:", error);
-            })
+      postProductos(url, todo)
+      .then(response => {
+        // Hacer algo con la respuesta si es necesario
+        console.log("Respuesta de postProductos:", response);
+      })
+      .catch(error => {
+        // Manejar el error si la solicitud falla
+        console.error("Error al enviar los datos:", error);
+      })
     })
+  }

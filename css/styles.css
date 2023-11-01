@@ -27,7 +27,8 @@ table{
     margin: 2px;
     border-collapse: collapse;
 }
-input[type="text"]{
+input[type="text"],
+input[type="number"]{
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
